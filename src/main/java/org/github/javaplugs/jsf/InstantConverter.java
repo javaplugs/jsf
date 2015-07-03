@@ -23,18 +23,25 @@
  */
 package org.github.javaplugs.jsf;
 
-import java.time.ZonedDateTime;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 /**
- * Converter for Java 8 ZonedDateTime.
+ *
+ * @author rumatoest
  */
-public class ZonedDateTimeConverter extends DateTimeConverter {
+public class InstantConverter extends DateTimeConverter {
+
+    public InstantConverter() {
+        this.formatter = DateTimeFormatter.ISO_TIME;
+        this.formatterName = "ISO_TIME";
+    }
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        ZonedDateTime zdt = ZonedDateTime.parse(value, formatter);
-        return zdt;
+        Instant inst = Instant.from(formatter.parse(value));
+        return inst;
     }
 }

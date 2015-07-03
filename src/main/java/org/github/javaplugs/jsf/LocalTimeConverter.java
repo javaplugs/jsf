@@ -23,18 +23,26 @@
  */
 package org.github.javaplugs.jsf;
 
-import java.time.ZonedDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 /**
- * Converter for Java 8 ZonedDateTime.
+ *
+ * @author rumatoest
  */
-public class ZonedDateTimeConverter extends DateTimeConverter {
+public class LocalTimeConverter extends DateTimeConverter {
+
+    public LocalTimeConverter() {
+        this.formatter = DateTimeFormatter.ISO_LOCAL_TIME;
+        this.formatterName = "ISO_LOCAL_TIME";
+    }
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        ZonedDateTime zdt = ZonedDateTime.parse(value, formatter);
-        return zdt;
+        LocalTime lt = LocalTime.parse(value, formatter);
+        return lt;
     }
+
 }

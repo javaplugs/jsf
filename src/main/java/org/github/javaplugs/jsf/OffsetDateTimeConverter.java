@@ -23,18 +23,19 @@
  */
 package org.github.javaplugs.jsf;
 
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 /**
- * Converter for Java 8 ZonedDateTime.
+ *
+ * @author rumatoest
  */
-public class ZonedDateTimeConverter extends DateTimeConverter {
+public class OffsetDateTimeConverter extends DateTimeConverter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        ZonedDateTime zdt = ZonedDateTime.parse(value, formatter);
-        return zdt;
+        OffsetDateTime odt = OffsetDateTime.parse(value, formatter);
+        return odt;
     }
 }

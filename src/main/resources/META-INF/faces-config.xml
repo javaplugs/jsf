@@ -7,8 +7,51 @@
     <name>JavaplugsJSF</name>
     
     <converter>
+        <converter-id>jsfplugs.Instant</converter-id>
+        <converter-class>org.github.javaplugs.jsf.InstantConverter</converter-class>
+        <attribute>            
+            <attribute-name>formatter</attribute-name>            
+            <attribute-class>java.lang.String</attribute-class>        
+        </attribute>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.LocalDate</converter-id>
+        <converter-class>org.github.javaplugs.jsf.LocalDateConverter</converter-class>
+        <attribute>            
+            <attribute-name>formatter</attribute-name>            
+            <attribute-class>java.lang.String</attribute-class>        
+        </attribute>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.LocalDateTime</converter-id>
+        <converter-class>org.github.javaplugs.jsf.LocalDateTimeConverter</converter-class>
+        <attribute>            
+            <attribute-name>formatter</attribute-name>            
+            <attribute-class>java.lang.String</attribute-class>        
+        </attribute>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.LocalTime</converter-id>
+        <converter-class>org.github.javaplugs.jsf.LocalTimeConverter</converter-class>
+        <attribute>            
+            <attribute-name>formatter</attribute-name>            
+            <attribute-class>java.lang.String</attribute-class>        
+        </attribute>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.OffsetDateTime</converter-id>
+        <converter-class>org.github.javaplugs.jsf.OffsetDateTimeConverterr</converter-class>
+        <attribute>            
+            <attribute-name>formatter</attribute-name>            
+            <attribute-class>java.lang.String</attribute-class>        
+        </attribute>
+    </converter>
+    <converter>
         <converter-id>jsfplugs.ZonedDateTime</converter-id>
         <converter-class>org.github.javaplugs.jsf.ZonedDateTimeConverter</converter-class>
-        <attribute>formatter</attribute>
+        <attribute>
+            <attribute-name>formatter</attribute-name>
+            <attribute-class>java.lang.String</attribute-class>
+        </attribute>
     </converter>
 </faces-config>

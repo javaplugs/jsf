@@ -5,6 +5,56 @@
                 version="2.0">
     <namespace>https://github.com/javaplugs/jsf-plugs</namespace>
     <tag>
+        <tag-name>convertInstant</tag-name>
+        <converter>
+            <converter-id>jsfplugs.Instant</converter-id>
+        </converter>
+        <attribute>
+            <name>format</name>
+            <description>Name of of pre defined DateTimeFormatter</description>
+        </attribute>
+    </tag>
+    <tag>
+        <tag-name>convertLocalDate</tag-name>
+        <converter>
+            <converter-id>jsfplugs.LocalDate</converter-id>
+        </converter>
+        <attribute>
+            <name>format</name>
+            <description>Name of of pre defined DateTimeFormatter</description>
+        </attribute>
+    </tag>
+    <tag>
+        <tag-name>convertLocalDateTime</tag-name>
+        <converter>
+            <converter-id>jsfplugs.LocalDateTime</converter-id>
+        </converter>
+        <attribute>
+            <name>format</name>
+            <description>Name of of pre defined DateTimeFormatter</description>
+        </attribute>
+    </tag>
+    <tag>
+        <tag-name>convertLocalTime</tag-name>
+        <converter>
+            <converter-id>jsfplugs.LocalTime</converter-id>
+        </converter>
+        <attribute>
+            <name>format</name>
+            <description>Name of of pre defined DateTimeFormatter</description>
+        </attribute>
+    </tag>
+    <tag>
+        <tag-name>convertOffsetDateTime</tag-name>
+        <converter>
+            <converter-id>jsfplugs.OffsetDateTime</converter-id>
+        </converter>
+        <attribute>
+            <name>format</name>
+            <description>Name of of pre defined DateTimeFormatter</description>
+        </attribute>
+    </tag>
+    <tag>
         <tag-name>convertZonedDateTime</tag-name>
         <converter>
             <converter-id>jsfplugs.ZonedDateTime</converter-id>
