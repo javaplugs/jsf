@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+group = 'org.github.javaplugs'
+version = '0.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.sun.faces:jsf-api:2.+'
+    //runtime 'javax.servlet:servlet-api:2.+'
+    //runtime 'log4j:log4j:1.2.+'
+}
+
+//Include runtime for compilation
+sourceSets.main.compileClasspath += configurations.runtime
+
+publishing {
+    publications {
+        mavenJar(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+// Tasks
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
