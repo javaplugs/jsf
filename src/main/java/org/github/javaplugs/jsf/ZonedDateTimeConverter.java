@@ -78,6 +78,6 @@ public class ZonedDateTimeConverter implements Converter {
         }
         ChronoZonedDateTime dateTime = (ChronoZonedDateTime)value;
 
-        return dateTime.format(DateTimeFormatter.ISO_DATE_TIME);
+        return dateTime.format(formatter);
     }
 }

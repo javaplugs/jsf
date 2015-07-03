@@ -9,5 +9,6 @@
     <converter>
         <converter-id>javaplugs.ZonedDateTime</converter-id>
         <converter-class>org.github.javaplugs.jsf.ZonedDateTimeConverter</converter-class>
+        <attribute>formatter</attribute>
     </converter>
 </faces-config>
