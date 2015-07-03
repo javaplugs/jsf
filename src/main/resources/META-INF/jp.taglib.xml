@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml version="1.0" encoding="UTF-8"?>
 <facelet-taglib xmlns="http://java.sun.com/xml/ns/javaee"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd"
@@ -8,10 +7,10 @@
     <tag>
         <tag-name>convertZonedDateTime</tag-name>
         <converter>
-            <converter-id>javaplugs.ZonedDateTime</converter-id>
+            <converter-id>jsfplugs.ZonedDateTime</converter-id>
         </converter>
         <attribute>
-            <name>Format</name>
+            <name>format</name>
             <description>Name of of pre defined DateTimeFormatter</description>
         </attribute>
     </tag>

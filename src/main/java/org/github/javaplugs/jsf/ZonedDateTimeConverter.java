@@ -55,7 +55,7 @@ public class ZonedDateTimeConverter implements Converter {
             Class<DateTimeFormatter> dtfCls = DateTimeFormatter.class;
             Field field = dtfCls.getField(value);
 
-            if (field.getType().getCanonicalName().equals("DateTimeFormatter")) {
+            if (field.getType().getCanonicalName().equals("java.time.format.DateTimeFormatter")) {
                 this.formatterName = field.getName();
                 this.formatter = (DateTimeFormatter)field.get(null);
             }
