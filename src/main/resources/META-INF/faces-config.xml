@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config 
+    version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+    <name>JavaplugsJSF</name>
+    
+    <converter>
+        <converter-id>jsfplugs.Instant</converter-id>
+        <converter-class>com.github.jneat.jsf.InstantConverter</converter-class>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.LocalDate</converter-id>
+        <converter-class>com.github.jneat.jsf.LocalDateConverter</converter-class>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.LocalDateTime</converter-id>
+        <converter-class>com.github.jneat.jsf.LocalDateTimeConverter</converter-class>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.LocalTime</converter-id>
+        <converter-class>com.github.jneat.jsf.LocalTimeConverter</converter-class>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.OffsetDateTime</converter-id>
+        <converter-class>com.github.jneat.jsf.OffsetDateTimeConverter</converter-class>
+    </converter>
+    <converter>
+        <converter-id>jsfplugs.ZonedDateTime</converter-id>
+        <converter-class>com.github.jneat.jsf.ZonedDateTimeConverter</converter-class>
+    </converter>
+</faces-config>
