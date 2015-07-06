@@ -21,10 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE. 
  */
-package org.github.javaplugs.jsf;
+package com.github.javaplugs.jsf;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
@@ -32,16 +31,12 @@ import javax.faces.context.FacesContext;
  *
  * @author rumatoest
  */
-public class LocalDateConverter extends DateTimeConverter {
-
-    public LocalDateConverter() {
-        this.formatter = DateTimeFormatter.ISO_LOCAL_DATE;
-        this.formatterName = "ISO_LOCAL_DATE";
-    }
+public class LocalDateTimeConverter extends DateTimeConverter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        LocalDate ld = LocalDate.parse(value, formatter);
-        return ld;
+        LocalDateTime ldt = LocalDateTime.parse(value, formatter);
+        return ldt;
     }
+
 }

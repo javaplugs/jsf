@@ -21,10 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE. 
  */
-package org.github.javaplugs.jsf;
+package com.github.javaplugs.jsf;
 
-import java.time.Instant;
-import java.time.format.DateTimeFormatter;
+import java.time.OffsetDateTime;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
@@ -32,16 +31,11 @@ import javax.faces.context.FacesContext;
  *
  * @author rumatoest
  */
-public class InstantConverter extends DateTimeConverter {
-
-    public InstantConverter() {
-        this.formatter = DateTimeFormatter.ISO_TIME;
-        this.formatterName = "ISO_TIME";
-    }
+public class OffsetDateTimeConverter extends DateTimeConverter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        Instant inst = Instant.from(formatter.parse(value));
-        return inst;
+        OffsetDateTime odt = OffsetDateTime.parse(value, formatter);
+        return odt;
     }
 }

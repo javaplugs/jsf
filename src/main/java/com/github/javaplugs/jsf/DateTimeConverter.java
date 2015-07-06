@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE. 
  */
-package org.github.javaplugs.jsf;
+package com.github.javaplugs.jsf;
 
 import java.lang.reflect.Field;
 import java.time.format.DateTimeFormatter;
@@ -40,12 +40,17 @@ public abstract class DateTimeConverter implements Converter {
 
     protected String formatterName = "ISO_DATE_TIME";
 
+    
+    public void setPattern(String pattern) {
+        formatter = DateTimeFormatter.ofPattern(pattern);
+    }
+    
     /**
      * Return name for used now {@link DateTimeFormatter}
-     */
     public String getFormatter() {
         return formatterName;
     }
+     */
 
     /**
      * Set name for {@link DateTimeFormatter} for output/parse date

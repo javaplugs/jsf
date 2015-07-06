@@ -10,8 +10,12 @@
             <converter-id>jsfplugs.Instant</converter-id>
         </converter>
         <attribute>
+            <name>pattern</name>
+            <description>Date format pattern for DateTimeFormatter</description>
+        </attribute>
+        <attribute>
             <name>format</name>
-            <description>Name of of pre defined DateTimeFormatter</description>
+            <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
     </tag>
     <tag>
@@ -20,8 +24,12 @@
             <converter-id>jsfplugs.LocalDate</converter-id>
         </converter>
         <attribute>
+            <name>pattern</name>
+            <description>Date format pattern for DateTimeFormatter</description>
+        </attribute>
+        <attribute>
             <name>format</name>
-            <description>Name of of pre defined DateTimeFormatter</description>
+            <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
     </tag>
     <tag>
@@ -30,8 +38,12 @@
             <converter-id>jsfplugs.LocalDateTime</converter-id>
         </converter>
         <attribute>
+            <name>pattern</name>
+            <description>Date format pattern for DateTimeFormatter</description>
+        </attribute>
+        <attribute>
             <name>format</name>
-            <description>Name of of pre defined DateTimeFormatter</description>
+            <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
     </tag>
     <tag>
@@ -40,8 +52,12 @@
             <converter-id>jsfplugs.LocalTime</converter-id>
         </converter>
         <attribute>
+            <name>pattern</name>
+            <description>Date format pattern for DateTimeFormatter</description>
+        </attribute>
+        <attribute>
             <name>format</name>
-            <description>Name of of pre defined DateTimeFormatter</description>
+            <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
     </tag>
     <tag>
@@ -50,8 +66,12 @@
             <converter-id>jsfplugs.OffsetDateTime</converter-id>
         </converter>
         <attribute>
+            <name>pattern</name>
+            <description>Date format pattern for DateTimeFormatter</description>
+        </attribute>
+        <attribute>
             <name>format</name>
-            <description>Name of of pre defined DateTimeFormatter</description>
+            <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
     </tag>
     <tag>
@@ -60,8 +80,12 @@
             <converter-id>jsfplugs.ZonedDateTime</converter-id>
         </converter>
         <attribute>
+            <name>pattern</name>
+            <description>Date format pattern for DateTimeFormatter</description>
+        </attribute>
+        <attribute>
             <name>format</name>
-            <description>Name of of pre defined DateTimeFormatter</description>
+            <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
     </tag>
 </facelet-taglib>

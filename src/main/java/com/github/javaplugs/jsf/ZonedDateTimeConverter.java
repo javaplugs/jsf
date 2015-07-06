@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE. 
  */
-package org.github.javaplugs.jsf;
+package com.github.javaplugs.jsf;
 
 import java.time.ZonedDateTime;
 import javax.faces.component.UIComponent;
