@@ -36,7 +36,6 @@ public class InstantConverter extends DateTimeConverter {
 
     public InstantConverter() {
         this.formatter = DateTimeFormatter.ISO_TIME;
-        this.formatterName = "ISO_TIME";
     }
 
     @Override

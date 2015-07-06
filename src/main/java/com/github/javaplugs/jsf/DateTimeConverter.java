@@ -38,20 +38,10 @@ public abstract class DateTimeConverter implements Converter {
 
     protected DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
-    protected String formatterName = "ISO_DATE_TIME";
-
-    
     public void setPattern(String pattern) {
         formatter = DateTimeFormatter.ofPattern(pattern);
     }
     
-    /**
-     * Return name for used now {@link DateTimeFormatter}
-    public String getFormatter() {
-        return formatterName;
-    }
-     */
-
     /**
      * Set name for {@link DateTimeFormatter} for output/parse date
      */
@@ -61,7 +51,6 @@ public abstract class DateTimeConverter implements Converter {
             Field field = dtfCls.getField(value);
 
             if (field.getType().getCanonicalName().equals("java.time.format.DateTimeFormatter")) {
-                this.formatterName = field.getName();
                 this.formatter = (DateTimeFormatter)field.get(null);
             }
         } catch (SecurityException | IllegalArgumentException | IllegalAccessException | NoSuchFieldException ex) {

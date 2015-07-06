@@ -36,7 +36,6 @@ public class LocalDateConverter extends DateTimeConverter {
 
     public LocalDateConverter() {
         this.formatter = DateTimeFormatter.ISO_LOCAL_DATE;
-        this.formatterName = "ISO_LOCAL_DATE";
     }
 
     @Override
