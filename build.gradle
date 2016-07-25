@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = 'com.github.javaplugs'
-version = '0.1'
+version = '0.2'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.sun.faces:jsf-api:2.+'
+    compile 'javax.faces:javax.faces-api:2.1'
 }
 
 publishing {

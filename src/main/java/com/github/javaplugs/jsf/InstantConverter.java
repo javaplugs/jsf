@@ -29,8 +29,12 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 /**
+ * Implements JSF converter for {@link Instant} type.
+ * You can refer it as &lt;f:converter converterId="jsfplugs.Instant" /&gt;
+ * or use it from library xmlns:jp="https://github.com/javaplugs/jsf-plugs"
+ * as &lt;jp:convertInstant /&gt;
  *
- * @author rumatoest
+ * @see DateTimeConverter
  */
 public class InstantConverter extends DateTimeConverter {
 

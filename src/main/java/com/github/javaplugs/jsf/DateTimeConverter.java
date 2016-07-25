@@ -31,19 +31,27 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 
 /**
- *
- * @author rumatoest
+ * Base class for all Java 8 time converters.
+ * Implements setters for formatter and pattern attributes.
+ * This attributes allows you setup your date format and should not be used together.
  */
 public abstract class DateTimeConverter implements Converter {
 
     protected DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
+    /**
+     * You can set any custom date format string.
+     *
+     * @param pattern format string for {@link DateTimeFormatter}
+     */
     public void setPattern(String pattern) {
         formatter = DateTimeFormatter.ofPattern(pattern);
     }
-    
+
     /**
-     * Set name for {@link DateTimeFormatter} for output/parse date
+     * Set predefined formatter {@link DateTimeFormatter} to output/parse date.
+     *
+     * @param value Formatter constant name from {@link DateTimeFormatter}
      */
     public void setFormatter(String value) {
         try {
@@ -54,7 +62,7 @@ public abstract class DateTimeConverter implements Converter {
                 this.formatter = (DateTimeFormatter)field.get(null);
             }
         } catch (SecurityException | IllegalArgumentException | IllegalAccessException | NoSuchFieldException ex) {
-            throw new RuntimeException(ex.getMessage(), ex);
+            throw new IllegalArgumentException(ex.getMessage(), ex);
         }
     }
 

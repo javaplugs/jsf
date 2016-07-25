@@ -28,8 +28,12 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 /**
+ * Implements JSF converter for {@link LocalDateTime} type.
+ * You can refer it as &lt;f:converter converterId="jsfplugs.LocalDateTime" /&gt;
+ * or use it from library xmlns:jp="https://github.com/javaplugs/jsf-plugs"
+ * as &lt;jp:convertLocalDateTime /&gt;
  *
- * @author rumatoest
+ * @see DateTimeConverter
  */
 public class LocalDateTimeConverter extends DateTimeConverter {
 

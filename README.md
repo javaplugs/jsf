@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.javaplugs:jsf:0.1'
+  compile 'com.github.javaplugs:jsf-plugs:0.2'
 }
 ```
 
@@ -26,7 +26,7 @@ dependencies {
 
 <dependency>
   <groupId>com.github.javaplugs</groupId>
-  <artifactId>jsf</artifactId>
-  <version>0.1</version>
+  <artifactId>jsf-plugs</artifactId>
+  <version>0.2</version>
 </dependency>
 ```

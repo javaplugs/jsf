@@ -28,7 +28,12 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 /**
- * Converter for Java 8 ZonedDateTime.
+ * Implements JSF converter for {@link ZonedDateTime} type.
+ * You can refer it as &lt;f:converter converterId="jsfplugs.ZonedDateTime" /&gt;
+ * or use it from library xmlns:jp="https://github.com/javaplugs/jsf-plugs"
+ * as &lt;jp:convertZonedDateTime /&gt;
+ *
+ * @see DateTimeConverter
  */
 public class ZonedDateTimeConverter extends DateTimeConverter {
 

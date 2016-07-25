@@ -28,8 +28,12 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 /**
+ * Implements JSF converter for {@link OffsetDateTime} type.
+ * You can refer it as &lt;f:converter converterId="jsfplugs.OffsetDateTime" /&gt;
+ * or use it from library xmlns:jp="https://github.com/javaplugs/jsf-plugs"
+ * as &lt;jp:convertOffsetDateTime /&gt;
  *
- * @author rumatoest
+ * @see DateTimeConverter
  */
 public class OffsetDateTimeConverter extends DateTimeConverter {
 
