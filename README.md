@@ -1,32 +1,29 @@
 # Small but useful JSF tweaks
 
-## Adding to your project
+[![Release](https://jitpack.io/v/javaplugs/jsf-plugs.svg)](https://jitpack.io/#javaplugs/jsf-plugs)  
+[API javadoc](https://jitpack.io/com/github/javaplugs/jsf-plugs/-SNAPSHOT/javadoc/)
 
-For now this package is available only via https://jitpack.io/
+## Add to your project
 
-### Gradle dependencies
-```
-repositories {
-  maven {
-    url "https://jitpack.io"
-  }
-}
+You can add this artifact to your project using [JitPack](https://jitpack.io/#javaplugs/jsf-plugs).  
+All versions list, instructions for gradle, maven, ivy etc. can be found by link above.
 
-dependencies {
-  compile 'com.github.javaplugs:jsf-plugs:0.2'
-}
-```
+To get latest commit use -SNAPSHOT instead version number.
 
-### Maven dependencies
-```
-<repository>
-  <id>jitpack.io</id>
-  <url>https://jitpack.io</url>
-</repository>
+## Library features
 
-<dependency>
-  <groupId>com.github.javaplugs</groupId>
-  <artifactId>jsf-plugs</artifactId>
-  <version>0.2</version>
-</dependency>
-```
+### JSF convertors for new Java 8 time API
+
+Support next time type
+
+* java.time.Instant
+* java.time.LocalDate
+* java.time.LocalDateTime
+* java.time.LocalTime
+* java.time.OffsetDateTime
+* java.time.ZonedDateTime
+
+
+## How to use
+
+Unfortunately I'm to lazy to write docs, but you can do it and submit pull request :)

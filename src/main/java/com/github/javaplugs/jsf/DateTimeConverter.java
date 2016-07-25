@@ -72,10 +72,10 @@ public abstract class DateTimeConverter implements Converter {
     /**
      * Set the {@link ZoneId} for the {@link DateTimeFormatter}
      *
-     * @param zoneId format string for {@link DateTimeFormatter}
+     * @param zoneIdName format string for {@link DateTimeFormatter}
      */
-    public void setZoneId(String value) {
-    	ZoneId zoneId = ZoneId.of(value);
+    public void setZoneId(String zoneIdName) {
+    	ZoneId zoneId = ZoneId.of(zoneIdName);
     	if (this.pattern != null) {
         	this.formatter = DateTimeFormatter.ofPattern(this.pattern);
     	}

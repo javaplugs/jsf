@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = 'com.github.javaplugs'
-version = '0.2'
+version = '0.2.1'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -20,8 +20,14 @@ task sourcesJar(type: Jar, dependsOn: classes) {
     from sourceSets.main.allSource
 }
 
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
 artifacts {
     archives sourcesJar
+    archives javadocJar
 }
 
 publishing {
@@ -30,6 +36,9 @@ publishing {
             from components.java
             artifact sourcesJar {
                 classifier "sources"
+            }
+            artifact javadocJar {
+                classifier "javadoc"
             }
         }
     }
