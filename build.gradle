@@ -15,10 +15,22 @@ dependencies {
     compile 'javax.faces:javax.faces-api:2.1'
 }
 
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+
 publishing {
     publications {
         mavenJar(MavenPublication) {
             from components.java
+            artifact sourcesJar {
+                classifier "sources"
+            }
         }
     }
 }
