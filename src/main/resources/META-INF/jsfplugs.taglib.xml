@@ -18,6 +18,10 @@
             <name>format</name>
             <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <description>ZoneId to be used with DateTimeFormatter</description>
+        </attribute>
     </tag>
     <tag>
         <tag-name>convertLocalDate</tag-name>
@@ -31,6 +35,10 @@
         <attribute>
             <name>format</name>
             <description>Pre defined DateTimeFormatter name (attribute name)</description>
+        </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <description>ZoneId to be used with DateTimeFormatter</description>
         </attribute>
     </tag>
     <tag>
@@ -46,6 +54,10 @@
             <name>format</name>
             <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <description>ZoneId to be used with DateTimeFormatter</description>
+        </attribute>
     </tag>
     <tag>
         <tag-name>convertLocalTime</tag-name>
@@ -59,6 +71,10 @@
         <attribute>
             <name>format</name>
             <description>Pre defined DateTimeFormatter name (attribute name)</description>
+        </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <description>ZoneId to be used with DateTimeFormatter</description>
         </attribute>
     </tag>
     <tag>
@@ -74,6 +90,10 @@
             <name>format</name>
             <description>Pre defined DateTimeFormatter name (attribute name)</description>
         </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <description>ZoneId to be used with DateTimeFormatter</description>
+        </attribute>
     </tag>
     <tag>
         <tag-name>convertZonedDateTime</tag-name>
@@ -87,6 +107,10 @@
         <attribute>
             <name>format</name>
             <description>Pre defined DateTimeFormatter name (attribute name)</description>
+        </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <description>ZoneId to be used with DateTimeFormatter</description>
         </attribute>
     </tag>
 </facelet-taglib>

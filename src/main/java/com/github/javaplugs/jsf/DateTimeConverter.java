@@ -24,6 +24,7 @@
 package com.github.javaplugs.jsf;
 
 import java.lang.reflect.Field;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.Temporal;
 import javax.faces.component.UIComponent;
@@ -38,6 +39,7 @@ import javax.faces.convert.Converter;
 public abstract class DateTimeConverter implements Converter {
 
     protected DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+    protected String pattern = null;
 
     /**
      * You can set any custom date format string.
@@ -45,7 +47,8 @@ public abstract class DateTimeConverter implements Converter {
      * @param pattern format string for {@link DateTimeFormatter}
      */
     public void setPattern(String pattern) {
-        formatter = DateTimeFormatter.ofPattern(pattern);
+    	this.pattern = pattern;
+    	this.formatter = DateTimeFormatter.ofPattern(pattern);
     }
 
     /**
@@ -64,6 +67,19 @@ public abstract class DateTimeConverter implements Converter {
         } catch (SecurityException | IllegalArgumentException | IllegalAccessException | NoSuchFieldException ex) {
             throw new IllegalArgumentException(ex.getMessage(), ex);
         }
+    }
+
+    /**
+     * Set the {@link ZoneId} for the {@link DateTimeFormatter}
+     *
+     * @param zoneId format string for {@link DateTimeFormatter}
+     */
+    public void setZoneId(String value) {
+    	ZoneId zoneId = ZoneId.of(value);
+    	if (this.pattern != null) {
+        	this.formatter = DateTimeFormatter.ofPattern(this.pattern);
+    	}
+    	this.formatter = formatter.withZone(zoneId);
     }
 
     @Override
