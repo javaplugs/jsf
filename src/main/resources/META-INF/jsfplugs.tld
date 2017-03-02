@@ -27,6 +27,14 @@
                 <type>java.lang.String</type>
             </deferred-value>
         </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
     </tag>
     <tag>
         <name>convertLocalDate</name>
@@ -43,6 +51,14 @@
         </attribute>
         <attribute>
             <name>formatter</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <name>zoneId</name>
             <required>false</required>
             <rtexprvalue>false</rtexprvalue>
             <deferred-value>
@@ -71,6 +87,14 @@
                 <type>java.lang.String</type>
             </deferred-value>
         </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
     </tag>
     <tag>
         <name>convertLocalTime</name>
@@ -87,6 +111,14 @@
         </attribute>
         <attribute>
             <name>formatter</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <name>zoneId</name>
             <required>false</required>
             <rtexprvalue>false</rtexprvalue>
             <deferred-value>
@@ -115,6 +147,14 @@
                 <type>java.lang.String</type>
             </deferred-value>
         </attribute>
+        <attribute>
+            <name>zoneId</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
     </tag>
     <tag>
         <name>convertZonedDateTime</name>
@@ -131,6 +171,14 @@
         </attribute>
         <attribute>
             <name>formatter</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <name>zoneId</name>
             <required>false</required>
             <rtexprvalue>false</rtexprvalue>
             <deferred-value>
