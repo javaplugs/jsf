@@ -25,7 +25,7 @@
     </converter>
     <converter>
         <converter-id>jsfplugs.OffsetDateTime</converter-id>
-        <converter-class>com.github.javaplugs.jsf.OffsetDateTimeConverterr</converter-class>
+        <converter-class>com.github.javaplugs.jsf.OffsetDateTimeConverter</converter-class>
     </converter>
     <converter>
         <converter-id>jsfplugs.ZonedDateTime</converter-id>

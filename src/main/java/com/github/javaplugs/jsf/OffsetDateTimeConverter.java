@@ -39,7 +39,7 @@ public class OffsetDateTimeConverter extends DateTimeConverter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        OffsetDateTime odt = OffsetDateTime.parse(value, formatter);
+        OffsetDateTime odt = OffsetDateTime.parse(value, getFormatterWithUiComponent(component));
         return odt;
     }
 }

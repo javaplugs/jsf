@@ -39,7 +39,7 @@ public class LocalDateTimeConverter extends DateTimeConverter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        LocalDateTime ldt = LocalDateTime.parse(value, formatter);
+        LocalDateTime ldt = LocalDateTime.parse(value, getFormatterWithUiComponent(component));
         return ldt;
     }
 
