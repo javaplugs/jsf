@@ -54,11 +54,11 @@ public abstract class DateTimeConverter extends javax.faces.convert.DateTimeConv
         this.formatter = DateTimeFormatter.ofPattern(pattern);
     }
 
-    public DateTimeFormatter getFormatter() {
+    protected DateTimeFormatter getFormatter() {
         return this.formatter;
     }
 
-    public void setFormatter(DateTimeFormatter formatter) {
+    protected void setFormatter(DateTimeFormatter formatter) {
         this.formatter = formatter;
     }
 
@@ -136,7 +136,7 @@ public abstract class DateTimeConverter extends javax.faces.convert.DateTimeConv
                 try {
                     return (String) method.invoke(component);
                 } catch (IllegalAccessException | InvocationTargetException e) {
-                    throw new RuntimeException(e.getMessage(), e);
+                    return null;
                 }
             }
         }
