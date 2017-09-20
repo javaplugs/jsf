@@ -24,7 +24,6 @@
 package com.github.javaplugs.jsf;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
@@ -38,13 +37,9 @@ import javax.faces.context.FacesContext;
  */
 public class LocalDateConverter extends DateTimeConverter {
 
-    public LocalDateConverter() {
-        this.formatter = DateTimeFormatter.ISO_LOCAL_DATE;
-    }
-
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        LocalDate ld = LocalDate.parse(value, formatter);
+        LocalDate ld = LocalDate.parse(value, getFormatterWithUiComponent(component));
         return ld;
     }
 }

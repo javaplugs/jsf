@@ -24,7 +24,6 @@
 package com.github.javaplugs.jsf;
 
 import java.time.Instant;
-import java.time.format.DateTimeFormatter;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
@@ -38,13 +37,9 @@ import javax.faces.context.FacesContext;
  */
 public class InstantConverter extends DateTimeConverter {
 
-    public InstantConverter() {
-        this.formatter = DateTimeFormatter.ISO_TIME;
-    }
-
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        Instant inst = Instant.from(formatter.parse(value));
+        Instant inst = Instant.from(getFormatterWithUiComponent(component).parse(value));
         return inst;
     }
 }

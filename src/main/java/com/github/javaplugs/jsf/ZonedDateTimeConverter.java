@@ -39,7 +39,7 @@ public class ZonedDateTimeConverter extends DateTimeConverter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        ZonedDateTime zdt = ZonedDateTime.parse(value, formatter);
+        ZonedDateTime zdt = ZonedDateTime.parse(value, getFormatterWithUiComponent(component));
         return zdt;
     }
 }

@@ -24,31 +24,51 @@
 package com.github.javaplugs.jsf;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.Temporal;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
+import javax.faces.convert.FacesConverter;
 
 /**
  * Base class for all Java 8 time converters.
  * Implements setters for formatter and pattern attributes.
  * This attributes allows you setup your date format and should not be used together.
  */
-public abstract class DateTimeConverter implements Converter {
+public abstract class DateTimeConverter extends javax.faces.convert.DateTimeConverter implements Converter {
 
-    protected DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-    protected String pattern = null;
+    private DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
     /**
      * You can set any custom date format string.
      *
      * @param pattern format string for {@link DateTimeFormatter}
      */
+    @Override
     public void setPattern(String pattern) {
-    	this.pattern = pattern;
-    	this.formatter = DateTimeFormatter.ofPattern(pattern);
+        super.setPattern(pattern);
+        this.formatter = DateTimeFormatter.ofPattern(pattern);
+    }
+
+    public DateTimeFormatter getFormatter() {
+        return this.formatter;
+    }
+
+    public void setFormatter(DateTimeFormatter formatter) {
+        this.formatter = formatter;
+    }
+
+    public DateTimeFormatter getFormatterWithUiComponent(UIComponent component) {
+        String pattern = this.getPatternFromUiComponent(component);
+        if (pattern != null) {
+            this.setPattern(pattern);
+        }
+
+        return this.formatter;
     }
 
     /**
@@ -75,20 +95,51 @@ public abstract class DateTimeConverter implements Converter {
      * @param zoneIdName format string for {@link DateTimeFormatter}
      */
     public void setZoneId(String zoneIdName) {
-    	ZoneId zoneId = ZoneId.of(zoneIdName);
-    	if (this.pattern != null) {
-        	this.formatter = DateTimeFormatter.ofPattern(this.pattern);
-    	}
-    	this.formatter = formatter.withZone(zoneId);
+        ZoneId zoneId = ZoneId.of(zoneIdName);
+        if (this.getPattern() != null) {
+            this.formatter = DateTimeFormatter.ofPattern(this.getPattern());
+        }
+        this.formatter = formatter.withZone(zoneId);
     }
 
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
+        String pattern = getPatternFromUiComponent(component);
+        if (pattern != null) {
+            setPattern(pattern);
+        }
 
         if (!(value instanceof Temporal)) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            return super.getAsString(context, component, value);
         }
         Temporal temporal = (Temporal)value;
         return formatter.format(temporal);
+    }
+
+    /**
+     * This method is useful for, for example, org.primefaces.component.calendar.Calendar.
+     * It allows to write in xhtml something like that: <br>
+     * {@code
+     * <p:calendar value="#{managedBean.localDate}" showOn="button"
+     * showButtonPanel="true" pattern="dd-MM-yyyy" converter="jsfplugs.LocalDate"/>
+     * }
+     *
+     * @param component UIComponent
+     * @return pattern if method String getPattern() is available on UIComponent or null
+     */
+    protected String getPatternFromUiComponent(UIComponent component) {
+        Method[] methods = component.getClass().getMethods();
+        for (Method method : methods) {
+            if (method.getName().equals("getPattern") && String.class.isAssignableFrom(method.getReturnType()) &&
+                method.getParameters().length == 0) {
+
+                try {
+                    return (String) method.invoke(component);
+                } catch (IllegalAccessException | InvocationTargetException e) {
+                    throw new RuntimeException(e.getMessage(), e);
+                }
+            }
+        }
+        return null;
     }
 }
