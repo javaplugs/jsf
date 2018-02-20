@@ -30,7 +30,7 @@ import javax.faces.context.FacesContext;
 /**
  * Implements JSF converter for {@link ZonedDateTime} type.
  * You can refer it as &lt;f:converter converterId="jsfplugs.ZonedDateTime" /&gt;
- * or use it from library xmlns:jp="https://github.com/javaplugs/jsf-plugs"
+ * or use it from library xmlns:jp="https://github.com/jneat/jsf-plugs"
  * as &lt;jp:convertZonedDateTime /&gt;
  *
  * @see DateTimeConverter

@@ -30,7 +30,7 @@ import javax.faces.context.FacesContext;
 /**
  * Implements JSF converter for {@link LocalDate} type.
  * You can refer it as &lt;f:converter converterId="jsfplugs.LocalDate" /&gt;
- * or use it from library xmlns:jp="https://github.com/javaplugs/jsf-plugs"
+ * or use it from library xmlns:jp="https://github.com/jneat/jsf-plugs"
  * as &lt;jp:convertLocalDate /&gt;
  *
  * @see DateTimeConverter
